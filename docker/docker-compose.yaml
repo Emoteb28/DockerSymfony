@@ -1,0 +1,38 @@
+version : '3.7'
+
+services :
+  mariadb :
+    image: mariadb:10.4
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
+      MYSQL_USER: ${USER}
+      MYSQL_PASSWORD: ${PASSWORD}
+      MYSQL_DATABASE: ${DATABASE}
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/db:/var/lib/mysql
+
+  adminer :
+    image: adminer
+    restart: always
+    ports:
+      - "9002:8080"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
+      MYSQL_USER: ${USER}
+      MYSQL_PASSWORD: ${PASSWORD}
+      MYSQL_DATABASE: ${DATABASE}
+    depends_on:
+      - mariadb
+
+
+  php_74 :
+    build: ../php74
+    ports :
+      - "9000:80"
+    volumes :
+      - ../src:/var/www/test
+    depends_on :
+      - mariadb
