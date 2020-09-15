@@ -27,12 +27,12 @@ services :
     depends_on:
       - mariadb
 
-
   php_74 :
     build: ../php74
     ports :
-      - "9000:80"
+      - "9003:80"
     volumes :
-      - ../src:/var/www/test
+      - ../test/:/var/www/
     depends_on :
       - mariadb
+

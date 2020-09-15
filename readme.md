@@ -24,3 +24,6 @@ create table one
 id int not null, 
 name char(25)
 )
+
+SymfonyDocker
+docker exec -it --user www-data docker_php_74_1 bash
