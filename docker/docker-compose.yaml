@@ -32,7 +32,7 @@ services :
     ports :
       - "9003:80"
     volumes :
-      - ../test/:/var/www/
+      - ../:/var/www/
     depends_on :
       - mariadb
 
