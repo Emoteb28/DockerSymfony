@@ -7,6 +7,9 @@ EXPOSE 80
 RUN apt-get update -qq && \
     apt-get install -qy \
     git \
+      curl \
+      build-essential \
+      libpq-dev \
     gnupg \
     libicu-dev \
     libzip-dev \
@@ -14,25 +17,35 @@ RUN apt-get update -qq && \
     zip \
     nano \
     zlib1g-dev && \
+      curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+      curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+      echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+      apt-get update && apt-get install -y nodejs yarn && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
+
 # PHP Extensions
 RUN docker-php-ext-configure zip && \
-    docker-php-ext-install -j$(nproc) intl opcache pdo_mysql zip
+    docker-php-ext-install -j$(nproc) intl opcache pdo_mysql zip mysqli
+
+#NPM and NodeJs
+#RUN apt-get install -y curl \
+#  && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+#  && apt-get install -y nodejs \
+#  && curl -L https://www.npmjs.com/install.sh | sh
+
+#RUN apt-get update && apt-get install -y \
 
 
-RUN docker-php-ext-install mysqli
+
 
     # On créé un utilisateur avec le même gid/uid que votre local
     # cela va permettre que les fichiers qui sont créés dans le contenaire auront vos droits
 #RUN addgroup --system www-data --gid 1000 && adduser --system www-data --uid 1000 --ingroup www-data
 
 
-# PHP Extensions
-RUN docker-php-ext-configure zip && \
-    docker-php-ext-install -j$(nproc) intl opcache pdo_mysql zip
 COPY conf/php.ini /usr/local/etc/php/conf.d/app.ini
 
 # On copie le php.ini du repertoire actuel dans le contenaire
@@ -58,5 +71,5 @@ RUN mkdir /var/www/test && chown -R www-data:www-data /var/www/test && \
 #COPY  ../conf/apache.conf /etc/apache2/conf-available/z-app.conf
 #COPY index.php /app/index.php
 #USER www-data
-WORKDIR /var/www/
 
+WORKDIR /var/www/test
