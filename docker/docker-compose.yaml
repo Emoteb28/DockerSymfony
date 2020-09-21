@@ -13,6 +13,7 @@ services :
       - "3306:3306"
     volumes:
       - ./data/db:/var/lib/mysql
+    container_name: maria
 
   adminer :
     image: adminer
@@ -26,6 +27,7 @@ services :
       MYSQL_DATABASE: ${DATABASE}
     depends_on:
       - mariadb
+    container_name: adminer
 
   php_74 :
     build: ../php74
@@ -35,4 +37,5 @@ services :
       - ../:/var/www/
     depends_on :
       - mariadb
+    container_name: php
 

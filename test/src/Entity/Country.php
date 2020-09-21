@@ -20,16 +20,28 @@ class Country
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Capital;
+    private $Name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Club;
+    private $Capital;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->Name;
+    }
+
+    public function setName(string $Name): self
+    {
+        $this->Name = $Name;
+
+        return $this;
     }
 
     public function getCapital(): ?string
@@ -40,18 +52,6 @@ class Country
     public function setCapital(string $Capital): self
     {
         $this->Capital = $Capital;
-
-        return $this;
-    }
-
-    public function getClub(): ?string
-    {
-        return $this->Club;
-    }
-
-    public function setClub(string $Club): self
-    {
-        $this->Club = $Club;
 
         return $this;
     }

@@ -36,6 +36,31 @@
       <path value="$PROJECT_DIR$/test/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/test/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/test/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/test/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/test/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/test/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/test/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/test/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/test/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/test/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/test/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/test/vendor/webimpress/safe-writer" />
+      <path value="$PROJECT_DIR$/test/vendor/nikic/php-parser" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
