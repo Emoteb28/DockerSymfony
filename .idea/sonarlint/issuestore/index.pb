@@ -1,24 +1,12 @@
 
 F
 php74/conf/vhosts.conf,3\2\324de28eb944286aa29f68b67cc8022bc820c61a
-A
-test/package.json,8\6\8676c167ce24cacd6b5cae3d2c10c152eb834630
 M
 test/templates/base.html.twig,3\3\33147df5b83a2921cf84662a1b4bcb30b628460e
-R
-"test/public/build/entrypoints.json,1\d\1dd271ce6932baa170bbb8e559aa7af1e5b8ac03
 V
 &test/templates/country/index.html.twig,5\0\50ccb05eb3af33f9ee3e99e84e99bf2d408a9445
->
-test/yarn.lock,c\9\c9fa8f67e0bcb8723d558db77b242808fa34c862
 U
 %test/templates/country/show.html.twig,7\2\721f321726e77a8e93271acaa52531a6c915bd49
-E
-test/assets/js/app.js,6\f\6fb8c8f1fd83a6252fd3fd3dd9a0f54b29964fef
-O
-test/assets/js/country_index.js,4\2\42ddca7d32affaa4b9dc39e806e73f8993c3204d
-F
-test/webpack.config.js,2\0\201154ba749f5e9efe5495fa5cb742b8290f90f2
 9
 	readme.md,2\7\275d783e298228506068436512433d343feb52aa
 9
